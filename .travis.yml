@@ -1,0 +1,27 @@
+sudo: required
+dist: bionic
+language: csharp
+mono: none
+dotnet: 6.0
+services: docker
+before_install:
+  - echo "Starting before_install steps"
+  - sudo apt-get update -qq
+  - sudo apt-get install -y libunwind8 gettext
+  - echo "Finished before_install steps"
+script:
+  - docker-compose build
+before_deploy:
+  - echo "Adedanha123*-*" | docker login --username "geohc" --password-stdin
+deploy:
+  provider: script
+  script:
+    docker tag uai-fly-db:latest geohc/uai-fly-db;
+    docker tag uai-fly-dotnet:latest geohc/uai-fly-dotnet;
+    docker push geohc/uai-fly-db;
+    docker push geohc/uai-fly-dotnet
+  
+  on:
+    brach: main
+    notifications:
+    email: false
