@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import Root from "./routes/root.jsx";
 import HomePage from "./pages/Home.jsx";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -12,7 +12,7 @@ import FAQPage from "./pages/FrequentlyAsked.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import BuyPage from "./pages/Buy.jsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Root />,
@@ -56,4 +56,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </LocalizationProvider>
   </React.StrictMode>
 );
-

@@ -3,9 +3,9 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } fr
 
 function OfferPage({ offers }) {
   return (
-    <Box sx={{display: "flex"}}>
+    <Box sx={{ display: "flex" }}>
       {offers.map((offer, index) => (
-        <Card key={index} sx={{minWidth: "100px", margin: 2 }}>
+        <Card key={index} sx={{ minWidth: "100px", margin: 2 }}>
           <CardMedia
             //sx={{ height: 140 }}
             // image={offer.image}
@@ -20,7 +20,7 @@ function OfferPage({ offers }) {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small">Comprar!</Button>
+            <Button size="small">Comprar</Button>
           </CardActions>
         </Card>
       ))}
