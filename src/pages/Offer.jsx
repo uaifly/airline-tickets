@@ -20,7 +20,7 @@ function OfferPage({ offers }) {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small">Comprar</Button>
+            <Button size="small">Comprar!</Button>
           </CardActions>
         </Card>
       ))}
